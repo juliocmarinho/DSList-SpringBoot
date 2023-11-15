@@ -23,7 +23,7 @@ public class GameListService {
     @Transactional(readOnly = true)
     public List<GameListDTO> findAll(){
         var result = gameListRepository.findAll();
-        return result.stream().map(x -> new GameListDTO(x)).toList(); // Função importante que pega os dados de result e cria uma lista de objetos GameMinDTO de acordo com as infos de X.
+        return result.stream().map(x -> new GameListDTO(x)).toList();
     }
 
 

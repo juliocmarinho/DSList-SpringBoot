@@ -28,5 +28,11 @@ public class GameService {
         return result.stream().map(x -> new GameMinDTO(x)).toList(); // Função importante que pega os dados de result e cria uma lista de objetos GameMinDTO de acordo com as infos de X.
     }
 
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> findByList(Long id){
+        var result = gameRepository.searchByList(id);
+        return result.stream().map(x -> new GameMinDTO(x)).toList();
+    }
+
 
 }
